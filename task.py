@@ -24,5 +24,17 @@ def divide(num1, num2):
     result = num1 / num2
     return f'{result}'
 
+@app.route('/calc/square/<int:num>')
+def square(num):
+    result = num ** 2
+    return f'{result}'
+
+@app.route('/calc/mod/<int:num1>/<int:num2>')
+def modulo(num1, num2):
+    if num2 == 0:
+        return 'Error: Modulo by zero!'
+    result = num1 % num2
+    return f'{result}'
+
 if __name__ == '__main__':
     app.run()
